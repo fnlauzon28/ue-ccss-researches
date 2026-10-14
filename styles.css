@@ -36,7 +36,7 @@ h1 {
 
 .map-pin {
 	position: absolute;
-	width: 20px;
+	width: 40px;
 	padding: 0;
 	border: 0;
 	background: transparent;
@@ -101,13 +101,17 @@ h1 {
 	top: 33.5%;
 }
 
-.map-kor .tooltip {
+.map-kor .tooltip,
+.map-jp .tooltip,
+.map-nz .tooltip {
 	bottom: calc(100% + 10px);
 	left: 50%;
 	transform: translate(-50%, 4px);
 }
 
-.map-kor .tooltip::after {
+.map-kor .tooltip::after,
+.map-jp .tooltip::after,
+.map-nz .tooltip::after {
 	top: auto;
 	right: auto;
 	bottom: -10px;
@@ -118,7 +122,11 @@ h1 {
 }
 
 .map-kor:hover .tooltip,
-.map-kor:focus-visible .tooltip {
+.map-kor:focus-visible .tooltip,
+.map-jp:hover .tooltip,
+.map-jp:focus-visible .tooltip,
+.map-nz:hover .tooltip,
+.map-nz:focus-visible .tooltip {
 	transform: translate(-50%, 0);
 }
 
@@ -164,3 +172,8 @@ h1 {
 	top: 85%;
 }
 
+.map-usa,
+.map-nz,
+.map-austria {
+	width: 50px;
+}

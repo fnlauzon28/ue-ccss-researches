@@ -177,3 +177,13 @@ h1 {
 .map-austria {
 	width: 80px;
 }
+
+.map-ph,
+.map-kor,
+.map-jp,
+.map-taiwan,
+.map-thai,
+.map-malaysia {
+	width: 45px;
+}
+

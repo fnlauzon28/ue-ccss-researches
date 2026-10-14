@@ -12,7 +12,7 @@ body {
 }
 
 main {
-	width: min(1120px, 100%);
+	width: min(1280px, 100%);
 	margin: 0 auto;
 }
 
@@ -36,7 +36,7 @@ h1 {
 
 .map-pin {
 	position: absolute;
-	width: 40px;
+	width: clamp(24px, 3.125%, 40px);
 	padding: 0;
 	border: 0;
 	background: transparent;
@@ -103,7 +103,9 @@ h1 {
 
 .map-kor .tooltip,
 .map-jp .tooltip,
-.map-nz .tooltip {
+.map-nz .tooltip,
+.map-thai .tooltip,
+.map-vietnam .tooltip {
 	bottom: calc(100% + 10px);
 	left: 50%;
 	transform: translate(-50%, 4px);
@@ -111,7 +113,9 @@ h1 {
 
 .map-kor .tooltip::after,
 .map-jp .tooltip::after,
-.map-nz .tooltip::after {
+.map-nz .tooltip::after,
+.map-thai .tooltip::after,
+.map-vietnam .tooltip::after {
 	top: auto;
 	right: auto;
 	bottom: -10px;
@@ -126,7 +130,11 @@ h1 {
 .map-jp:hover .tooltip,
 .map-jp:focus-visible .tooltip,
 .map-nz:hover .tooltip,
-.map-nz:focus-visible .tooltip {
+.map-nz:focus-visible .tooltip,
+.map-thai:hover .tooltip,
+.map-thai:focus-visible .tooltip,
+.map-vietnam:hover .tooltip,
+.map-vietnam:focus-visible .tooltip {
 	transform: translate(-50%, 0);
 }
 
@@ -150,8 +158,8 @@ h1 {
 
 .map-malaysia {
 	position: absolute;
-	left:75.5%;
-	top: 55.7%;
+	left:75.3%;
+	top: 56.9%;
 }
 
 .map-austria {
@@ -169,13 +177,24 @@ h1 {
 .map-nz {
 	position: absolute;
 	left:92%;
-	top: 85%;
+	top: 87%;
+}
+
+.map-vietnam {
+	position: absolute;
+	left: 76.5%;
+	top: 50%;
+}
+
+.map-australia {
+	position: absolute;
+	left: 84%;
+	top: 77%;
 }
 
 .map-usa,
-.map-nz,
-.map-austria {
-	width: 80px;
+.map-nz {
+	width: clamp(30px, 3.90625%, 50px);
 }
 
 .map-ph,
@@ -183,7 +202,30 @@ h1 {
 .map-jp,
 .map-taiwan,
 .map-thai,
-.map-malaysia {
-	width: 45px;
+.map-malaysia,
+.map-vietnam {
+	width: clamp(18px, 2.34375%, 30px);
 }
 
+button.map-pin.map-thai > .tooltip {
+	top: auto;
+	right: auto;
+	bottom: calc(100% + 10px);
+	left: 50%;
+	transform: translate(-50%, 4px);
+}
+
+button.map-pin.map-thai > .tooltip::after {
+	top: auto;
+	right: auto;
+	bottom: -10px;
+	left: 50%;
+	border-top-color: #18332c;
+	border-right-color: transparent;
+	transform: translateX(-50%);
+}
+
+button.map-pin.map-thai:hover > .tooltip,
+button.map-pin.map-thai:focus-visible > .tooltip {
+	transform: translate(-50%, 0);
+}
